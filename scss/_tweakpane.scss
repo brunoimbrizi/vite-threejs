@@ -1,0 +1,36 @@
+.tp-dfwv {
+	width: 300px !important;
+
+	&.full {
+		height: 100%;
+		top: 0px !important;
+		right: 0px !important;
+
+		.tp-rotv {
+			height: 100%;
+		}
+	}
+}
+
+.tp-fldv_c {
+	border: none !important;
+}
+
+.tp-lblv_v {
+	padding: 4px 0px !important;
+}
+
+.tp-lblv {
+	border-top: 1px solid black;
+}
+
+.tp-txtv {
+	background-color: black;
+}
+
+:root {
+	--tp-blade-unit-size: 28px;
+	--tp-base-background-color: #222;
+	--tp-base-border-radius: 0;
+	--tp-container-horizontal-padding: 8px;
+}

@@ -1,0 +1,11 @@
+@use '_tweakpane';
+
+html, body, #app {
+  height: 100%;
+}
+
+body {
+  background-color: #000;
+  margin: 0;
+  overflow: hidden;
+}

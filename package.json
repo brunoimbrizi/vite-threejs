@@ -1,0 +1,23 @@
+{
+  "name": "vite-threejs",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm version patch && vite build",
+    "preview": "vite preview",
+    "start": "npm run dev"
+  },
+  "devDependencies": {
+    "sass": "^1.56.2",
+    "vite": "^4.0.0",
+    "vite-plugin-glsl": "^1.0.0"
+  },
+  "dependencies": {
+    "async-preloader": "^8.0.0",
+    "stats.js": "^0.17.0",
+    "three": "^0.147.0",
+    "tweakpane": "^3.1.0"
+  }
+}
