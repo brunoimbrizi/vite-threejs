@@ -3,6 +3,8 @@ import '../scss/style.scss';
 import CanvasView from './canvas/CanvasView';
 import GUIView from './gui/GUIView';
 
+import { exportFrame } from './utils/export.utils';
+
 export default class App {
 
 	constructor() {
@@ -30,7 +32,7 @@ export default class App {
 		this.handlerAnimate = this.animate.bind(this);
 
 		window.addEventListener('resize', this.resize.bind(this));
-		window.addEventListener('keyup', this.keyup.bind(this));
+		window.addEventListener('keydown', this.keydown.bind(this));
 	}
 
 	animate() {
@@ -45,13 +47,13 @@ export default class App {
 	// ---------------------------------------------------------------------------------------------
 
 	update() {
-		if (this.gui?.stats) this.gui.stats.begin();
-		if (this.canvas) this.canvas.update();
+		this.gui?.stats?.begin();
+		this.canvas?.update();
 	}
 
 	draw() {
-		if (this.canvas) this.canvas.draw();
-		if (this.gui?.stats) this.gui.stats.end();
+		this.canvas?.draw();
+		this.gui?.stats?.end();
 	}
 
 	// ---------------------------------------------------------------------------------------------
@@ -62,11 +64,16 @@ export default class App {
 		const vw = this.el?.offsetWidth  || window.innerWidth;
 		const vh = this.el?.offsetHeight || window.innerHeight;
 
-		if (this.canvas) this.canvas.resize(vw, vh);
+		this.canvas?.resize(vw, vh);
 	}
 
-	keyup(e) {
+	keydown(e) {
 		// g or p
 		if (e.keyCode == 71 || e.keyCode == 80) { if (this.gui) this.gui.toggle(); }
+		// ctrl + s
+		if (e.keyCode === 83 && !e.altKey && (e.metaKey || e.ctrlKey)) {
+			e.preventDefault();
+			exportFrame(this.canvas.canvas);
+		}
 	}
 }
