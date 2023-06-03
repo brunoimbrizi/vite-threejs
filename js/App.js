@@ -1,6 +1,6 @@
 import '../scss/style.scss';
 
-import WebGLView from './webgl/WebGLView';
+import CanvasView from './canvas/CanvasView';
 import GUIView from './gui/GUIView';
 
 export default class App {
@@ -10,16 +10,16 @@ export default class App {
 	}
 
 	init() {
-		this.initWebGL();
+		this.initCanvas();
 		this.initGUI();
 		this.addListeners();
 		this.animate();
 		this.resize();
 	}
 
-	initWebGL() {
-		this.webgl = new WebGLView(this);
-		this.el.appendChild(this.webgl.renderer.domElement);
+	initCanvas() {
+		this.canvas = new CanvasView(this);
+		this.el.appendChild(this.canvas.canvas);
 	}
 
 	initGUI() {
@@ -46,11 +46,11 @@ export default class App {
 
 	update() {
 		if (this.gui?.stats) this.gui.stats.begin();
-		if (this.webgl) this.webgl.update();
+		if (this.canvas) this.canvas.update();
 	}
 
 	draw() {
-		if (this.webgl) this.webgl.draw();
+		if (this.canvas) this.canvas.draw();
 		if (this.gui?.stats) this.gui.stats.end();
 	}
 
@@ -62,13 +62,11 @@ export default class App {
 		const vw = this.el?.offsetWidth  || window.innerWidth;
 		const vh = this.el?.offsetHeight || window.innerHeight;
 
-		if (this.webgl) this.webgl.resize(vw, vh);
+		if (this.canvas) this.canvas.resize(vw, vh);
 	}
 
 	keyup(e) {
 		// g or p
 		if (e.keyCode == 71 || e.keyCode == 80) { if (this.gui) this.gui.toggle(); }
-		// h
-		if (e.keyCode == 72) { if (this.webgl.controls) this.webgl.controls.reset(); }
 	}
 }

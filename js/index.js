@@ -10,16 +10,7 @@ const preload = (manifest = {}) => {
 	let loadCount = 0;
 	let loadProgress = 0;
 
-	Promise.all(
-		pProgress.map(p => {
-			p.then(() => {
-				loadCount++;
-				loadProgress = loadCount / pProgress.length;
-				// console.log(loadProgress);
-			});
-			return p;
-		})
-	)
+	Promise.all(pProgress)
 	.then(([app]) => {
 		window.app = new app.default();
 		window.app.init();

@@ -1,4 +1,3 @@
-import * as THREE from 'three';
 import { Pane } from 'tweakpane';
 import Stats from 'stats.js';
 
@@ -8,10 +7,10 @@ export default class GUIView {
 		this.app = app;
 
 		this.color = '#0000FF';
-		this.number = 2;
+		this.units = 10;
 
 		this.initPane();
-		this.initStats();
+		// this.initStats();
 
 		this.enable();
 	}
@@ -20,11 +19,11 @@ export default class GUIView {
 		let folder;
 		
 		this.pane = new Pane();
-		// this.pane.containerElem_.classList.add('full');
+		this.pane.containerElem_.classList.add('full');
 
 		folder = this.pane.addFolder({ title: `App ${APP_VERSION}` });
 		folder.addInput(this, 'color').on('change', this.onColorChange.bind(this));
-		folder.addInput(this, 'number', { min: 0, max: 10 });
+		folder.addInput(this, 'units', { min: 1, max: 15, step: 1 }).on('change', this.onUnitsChange.bind(this));
 	}
 
 	initStats() {
@@ -59,7 +58,11 @@ export default class GUIView {
 		else this.enable();
 	}
 
-	onColorChange(e) {
-		this.app.webgl.object3D.material.uniforms.uColor.value.setStyle(e.value);
+	onColorChange() {
+		this.app.canvas.color = this.color;
+	}
+
+	onUnitsChange() {
+		this.app.canvas.units = this.units;
 	}
 }
