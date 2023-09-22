@@ -17,7 +17,7 @@
   "dependencies": {
     "async-preloader": "^8.0.0",
     "stats.js": "^0.17.0",
-    "three": "^0.147.0",
-    "tweakpane": "^3.1.0"
+    "three": "^0.156.1",
+    "tweakpane": "^4.0.1"
   }
 }

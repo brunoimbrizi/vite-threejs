@@ -20,11 +20,11 @@ export default class GUIView {
 		let folder;
 		
 		this.pane = new Pane();
-		// this.pane.containerElem_.classList.add('full');
+		this.pane.containerElem_.classList.add('full');
 
 		folder = this.pane.addFolder({ title: `App ${APP_VERSION}` });
-		folder.addInput(this, 'color').on('change', this.onColorChange.bind(this));
-		folder.addInput(this, 'number', { min: 0, max: 10 });
+		folder.addBinding(this, 'color').on('change', this.onColorChange.bind(this));
+		folder.addBinding(this, 'number', { min: 0, max: 10 });
 	}
 
 	initStats() {
