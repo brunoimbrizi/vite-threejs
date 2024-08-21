@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm version patch && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "start": "npm run dev"
   },
@@ -17,7 +17,7 @@
   "dependencies": {
     "async-preloader": "^8.0.0",
     "stats.js": "^0.17.0",
-    "three": "^0.156.1",
+    "three": "^0.167.1",
     "tweakpane": "^4.0.1"
   }
 }

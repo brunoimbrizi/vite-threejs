@@ -19,10 +19,12 @@ export default class GUIView {
 	initPane() {
 		let folder;
 		
-		this.pane = new Pane();
+		document.title = `APP ${APP_VERSION}`;
+
+		this.pane = new Pane({ title: document.title });
 		this.pane.containerElem_.classList.add('full');
 
-		folder = this.pane.addFolder({ title: `App ${APP_VERSION}` });
+		folder = this.pane.addFolder({ title: 'SETTINGS' });
 		folder.addBinding(this, 'color').on('change', this.onColorChange.bind(this));
 		folder.addBinding(this, 'number', { min: 0, max: 10 });
 	}
