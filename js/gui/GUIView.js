@@ -18,12 +18,14 @@ export default class GUIView {
 	initPane() {
 		let folder;
 		
-		this.pane = new Pane();
+		document.title = `PROTOTYPE PACKING ${APP_VERSION}`;
+
+		this.pane = new Pane({ title: document.title });
 		this.pane.containerElem_.classList.add('full');
 
-		folder = this.pane.addFolder({ title: `App ${APP_VERSION}` });
-		folder.addInput(this, 'color').on('change', this.onColorChange.bind(this));
-		folder.addInput(this, 'units', { min: 1, max: 15, step: 1 }).on('change', this.onUnitsChange.bind(this));
+		folder = this.pane.addFolder({ title: `SETTINGS` });
+		folder.addBinding(this, 'color').on('change', this.onColorChange.bind(this));
+		folder.addBinding(this, 'units', { min: 1, max: 15, step: 1 }).on('change', this.onUnitsChange.bind(this));
 	}
 
 	initStats() {

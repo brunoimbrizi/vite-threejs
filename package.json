@@ -17,6 +17,6 @@
     "async-preloader": "^8.0.0",
     "dateformat": "^5.0.3",
     "stats.js": "^0.17.0",
-    "tweakpane": "^3.1.0"
+    "tweakpane": "^4.0.4"
   }
 }
