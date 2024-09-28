@@ -10,7 +10,7 @@
     "start": "npm run dev"
   },
   "devDependencies": {
-    "sass": "^1.56.2",
+    "sass": "^1.79.4",
     "vite": "^4.0.0",
     "vite-plugin-glsl": "^1.0.0"
   },
