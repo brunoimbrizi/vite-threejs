@@ -5,13 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm version patch && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "start": "npm run dev"
   },
   "devDependencies": {
     "sass": "^1.79.4",
-    "vite": "^4.0.0"
+    "vite": "^6.0.9"
   },
   "dependencies": {
     "async-preloader": "^8.0.0",

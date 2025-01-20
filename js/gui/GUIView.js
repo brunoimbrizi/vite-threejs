@@ -18,7 +18,7 @@ export default class GUIView {
 	initPane() {
 		let folder;
 		
-		document.title = `PROTOTYPE PACKING ${APP_VERSION}`;
+		document.title = `PROTOTYPE ${APP_VERSION}`;
 
 		this.pane = new Pane({ title: document.title });
 		this.pane.containerElem_.classList.add('full');

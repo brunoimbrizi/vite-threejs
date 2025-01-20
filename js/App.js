@@ -20,8 +20,8 @@ export default class App {
 	}
 
 	initCanvas() {
-		this.canvas = new CanvasView(this);
-		this.el.appendChild(this.canvas.canvas);
+		this.view = new CanvasView(this);
+		this.el.appendChild(this.view.canvas);
 	}
 
 	initGUI() {
@@ -48,11 +48,11 @@ export default class App {
 
 	update() {
 		this.gui?.stats?.begin();
-		this.canvas?.update();
+		this.view?.update();
 	}
 
 	draw() {
-		this.canvas?.draw();
+		this.view?.draw();
 		this.gui?.stats?.end();
 	}
 
@@ -64,7 +64,7 @@ export default class App {
 		const vw = this.el?.offsetWidth  || window.innerWidth;
 		const vh = this.el?.offsetHeight || window.innerHeight;
 
-		this.canvas?.resize(vw, vh);
+		this.view?.resize(vw, vh);
 	}
 
 	keydown(e) {
@@ -73,7 +73,7 @@ export default class App {
 		// ctrl + s
 		if (e.keyCode === 83 && !e.altKey && (e.metaKey || e.ctrlKey)) {
 			e.preventDefault();
-			exportFrame(this.canvas.canvas);
+			exportFrame(this.view.canvas);
 		}
 	}
 }
