@@ -1,4 +1,4 @@
-import '../scss/style.scss';
+import './styles/style.scss';
 
 import CanvasView from './canvas/CanvasView';
 import GUIView from './gui/GUIView';
