@@ -1,4 +1,4 @@
-import '../scss/style.scss';
+import './styles/style.scss';
 
 import WebGLView from './webgl/WebGLView';
 import GUIView from './gui/GUIView';

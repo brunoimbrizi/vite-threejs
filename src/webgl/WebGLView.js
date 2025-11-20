@@ -2,8 +2,8 @@ import * as THREE from 'three';
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
-import vertexShader from '../../glsl/default.vert';
-import fragmentShader from '../../glsl/default.frag';
+import vertexShader from '../shaders/default.vert';
+import fragmentShader from '../shaders/default.frag';
 
 export default class WebGLView {
 

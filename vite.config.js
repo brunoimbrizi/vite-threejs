@@ -5,7 +5,6 @@ export default defineConfig({
   server: {
     port: '8080'
   },
-  publicDir: 'static',
   plugins: [ glsl() ],
   define: {
     APP_VERSION: JSON.stringify(process.env.npm_package_version),

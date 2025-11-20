@@ -10,14 +10,14 @@
     "start": "npm run dev"
   },
   "devDependencies": {
-    "sass": "^1.79.4",
-    "vite": "^4.0.0",
-    "vite-plugin-glsl": "^1.0.0"
+    "sass": "^1.94.2",
+    "vite": "^7.2.4",
+    "vite-plugin-glsl": "^1.5.4"
   },
   "dependencies": {
     "async-preloader": "^8.0.0",
     "stats.js": "^0.17.0",
-    "three": "^0.167.1",
-    "tweakpane": "^4.0.1"
+    "three": "^0.181.2",
+    "tweakpane": "^4.0.5"
   }
 }
